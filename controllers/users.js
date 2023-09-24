@@ -35,7 +35,7 @@ module.exports.createUser = async (req, res, next) => {
         new BadRequestError('Переданы некорректные данные при создании профиля'),
       );
     }
-    next();
+    next(error);
   }
 };
 
@@ -50,6 +50,11 @@ module.exports.updateUser = async (req, res, next) => {
 
     res.send(user);
   } catch (error) {
+    if (error.code === 11000) {
+      next(
+        new ExistsDatabaseError('Уже существует пользователь с таким email'),
+      );
+    }
     if (error.name === 'ValidationError') {
       next(
         new BadRequestError(
@@ -57,7 +62,7 @@ module.exports.updateUser = async (req, res, next) => {
         ),
       );
     }
-    next();
+    next(error);
   }
 };
 
@@ -91,6 +96,6 @@ module.exports.login = async (req, res, next) => {
     if (error) {
       next(new UnauthorizedError('Неправильные почта или пароль'));
     }
-    next();
+    next(error);
   }
 };

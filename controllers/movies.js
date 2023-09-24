@@ -57,7 +57,7 @@ module.exports.createUserCurrentMovie = async (req, res, next) => {
         new BadRequestError('Переданы некорректные данные при создании фильма'),
       );
     }
-    next();
+    next(error);
   }
 };
 
@@ -89,6 +89,6 @@ module.exports.deleteUserCurrentMovie = async (req, res, next) => {
         ),
       );
     }
-    next();
+    next(error);
   }
 };

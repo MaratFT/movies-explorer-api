@@ -16,6 +16,7 @@ const { PORT = 3000, DB_URL } = process.env;
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const allowedCors = [
+  'http://localhost:3000',
   'http://localhost:3001',
   'http://movexp.nomoredomainsicu.ru',
   'https://movexp.nomoredomainsicu.ru',
