@@ -17,7 +17,7 @@ Back-end часть проекта Movies Explorer. В проекте испол
   2. `npm run start` — запускает сервер  
   3. `npm run dev` — запускает сервер с hot-reload
 
-Адрес репозитория: [https://github.com/MaratFT/movies-explorer-api/tree/level-1](https://github.com/MaratFT/movies-explorer-api)
+Адрес репозитория: https://github.com/MaratFT/movies-explorer-api
 
 ## Ссылки на проект
 
